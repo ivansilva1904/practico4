@@ -35,15 +35,13 @@
             this.BUT_GENERAR = new System.Windows.Forms.Button();
             this.LAB_LISTA = new System.Windows.Forms.Label();
             this.LBOX_NUMEROS = new System.Windows.Forms.ListBox();
-            this.BUT_PARES = new System.Windows.Forms.Button();
-            this.BUT_IMPARES = new System.Windows.Forms.Button();
-            this.BUT_PRIMOS = new System.Windows.Forms.Button();
+            this.CLB_PAR_IMPAR_PRIMO = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // LAB_DESDE
             // 
             this.LAB_DESDE.AutoSize = true;
-            this.LAB_DESDE.Location = new System.Drawing.Point(92, 56);
+            this.LAB_DESDE.Location = new System.Drawing.Point(64, 52);
             this.LAB_DESDE.Name = "LAB_DESDE";
             this.LAB_DESDE.Size = new System.Drawing.Size(38, 13);
             this.LAB_DESDE.TabIndex = 0;
@@ -52,7 +50,7 @@
             // LAB_HASTA
             // 
             this.LAB_HASTA.AutoSize = true;
-            this.LAB_HASTA.Location = new System.Drawing.Point(92, 110);
+            this.LAB_HASTA.Location = new System.Drawing.Point(64, 106);
             this.LAB_HASTA.Name = "LAB_HASTA";
             this.LAB_HASTA.Size = new System.Drawing.Size(35, 13);
             this.LAB_HASTA.TabIndex = 1;
@@ -60,7 +58,7 @@
             // 
             // TXT_DESDE
             // 
-            this.TXT_DESDE.Location = new System.Drawing.Point(195, 56);
+            this.TXT_DESDE.Location = new System.Drawing.Point(167, 52);
             this.TXT_DESDE.Name = "TXT_DESDE";
             this.TXT_DESDE.Size = new System.Drawing.Size(100, 20);
             this.TXT_DESDE.TabIndex = 2;
@@ -68,7 +66,7 @@
             // 
             // TXT_HASTA
             // 
-            this.TXT_HASTA.Location = new System.Drawing.Point(195, 110);
+            this.TXT_HASTA.Location = new System.Drawing.Point(167, 106);
             this.TXT_HASTA.Name = "TXT_HASTA";
             this.TXT_HASTA.Size = new System.Drawing.Size(100, 20);
             this.TXT_HASTA.TabIndex = 3;
@@ -76,7 +74,7 @@
             // 
             // BUT_GENERAR
             // 
-            this.BUT_GENERAR.Location = new System.Drawing.Point(54, 169);
+            this.BUT_GENERAR.Location = new System.Drawing.Point(38, 164);
             this.BUT_GENERAR.Name = "BUT_GENERAR";
             this.BUT_GENERAR.Size = new System.Drawing.Size(100, 23);
             this.BUT_GENERAR.TabIndex = 4;
@@ -87,7 +85,7 @@
             // LAB_LISTA
             // 
             this.LAB_LISTA.AutoSize = true;
-            this.LAB_LISTA.Location = new System.Drawing.Point(437, 232);
+            this.LAB_LISTA.Location = new System.Drawing.Point(409, 228);
             this.LAB_LISTA.Name = "LAB_LISTA";
             this.LAB_LISTA.Size = new System.Drawing.Size(87, 13);
             this.LAB_LISTA.TabIndex = 6;
@@ -96,49 +94,33 @@
             // LBOX_NUMEROS
             // 
             this.LBOX_NUMEROS.FormattingEnabled = true;
-            this.LBOX_NUMEROS.Location = new System.Drawing.Point(379, 56);
+            this.LBOX_NUMEROS.Location = new System.Drawing.Point(351, 52);
             this.LBOX_NUMEROS.Name = "LBOX_NUMEROS";
             this.LBOX_NUMEROS.Size = new System.Drawing.Size(200, 173);
             this.LBOX_NUMEROS.TabIndex = 7;
             // 
-            // BUT_PARES
+            // CLB_PAR_IMPAR_PRIMO
             // 
-            this.BUT_PARES.Location = new System.Drawing.Point(214, 168);
-            this.BUT_PARES.Name = "BUT_PARES";
-            this.BUT_PARES.Size = new System.Drawing.Size(100, 23);
-            this.BUT_PARES.TabIndex = 8;
-            this.BUT_PARES.Text = "Numeros pares";
-            this.BUT_PARES.UseVisualStyleBackColor = true;
-            this.BUT_PARES.Click += new System.EventHandler(this.BUT_PARES_Click);
-            // 
-            // BUT_IMPARES
-            // 
-            this.BUT_IMPARES.Location = new System.Drawing.Point(54, 205);
-            this.BUT_IMPARES.Name = "BUT_IMPARES";
-            this.BUT_IMPARES.Size = new System.Drawing.Size(100, 23);
-            this.BUT_IMPARES.TabIndex = 9;
-            this.BUT_IMPARES.Text = "Numeros impares";
-            this.BUT_IMPARES.UseVisualStyleBackColor = true;
-            this.BUT_IMPARES.Click += new System.EventHandler(this.BUT_IMPARES_Click);
-            // 
-            // BUT_PRIMOS
-            // 
-            this.BUT_PRIMOS.Location = new System.Drawing.Point(214, 205);
-            this.BUT_PRIMOS.Name = "BUT_PRIMOS";
-            this.BUT_PRIMOS.Size = new System.Drawing.Size(100, 23);
-            this.BUT_PRIMOS.TabIndex = 10;
-            this.BUT_PRIMOS.Text = "Numeros primos";
-            this.BUT_PRIMOS.UseVisualStyleBackColor = true;
-            this.BUT_PRIMOS.Click += new System.EventHandler(this.BUT_PRIMOS_Click);
+            this.CLB_PAR_IMPAR_PRIMO.BackColor = System.Drawing.SystemColors.Control;
+            this.CLB_PAR_IMPAR_PRIMO.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CLB_PAR_IMPAR_PRIMO.CheckOnClick = true;
+            this.CLB_PAR_IMPAR_PRIMO.FormattingEnabled = true;
+            this.CLB_PAR_IMPAR_PRIMO.Items.AddRange(new object[] {
+            "Numeros pares",
+            "Numeros impares",
+            "Numeros primos"});
+            this.CLB_PAR_IMPAR_PRIMO.Location = new System.Drawing.Point(196, 164);
+            this.CLB_PAR_IMPAR_PRIMO.Name = "CLB_PAR_IMPAR_PRIMO";
+            this.CLB_PAR_IMPAR_PRIMO.Size = new System.Drawing.Size(119, 45);
+            this.CLB_PAR_IMPAR_PRIMO.TabIndex = 14;
+            this.CLB_PAR_IMPAR_PRIMO.SelectedIndexChanged += new System.EventHandler(this.CLB_PAR_IMPAR_PRIMO_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 311);
-            this.Controls.Add(this.BUT_PRIMOS);
-            this.Controls.Add(this.BUT_IMPARES);
-            this.Controls.Add(this.BUT_PARES);
+            this.ClientSize = new System.Drawing.Size(584, 261);
+            this.Controls.Add(this.CLB_PAR_IMPAR_PRIMO);
             this.Controls.Add(this.LBOX_NUMEROS);
             this.Controls.Add(this.LAB_LISTA);
             this.Controls.Add(this.BUT_GENERAR);
@@ -162,9 +144,7 @@
         private System.Windows.Forms.Button BUT_GENERAR;
         private System.Windows.Forms.Label LAB_LISTA;
         private System.Windows.Forms.ListBox LBOX_NUMEROS;
-        private System.Windows.Forms.Button BUT_PARES;
-        private System.Windows.Forms.Button BUT_IMPARES;
-        private System.Windows.Forms.Button BUT_PRIMOS;
+        private System.Windows.Forms.CheckedListBox CLB_PAR_IMPAR_PRIMO;
     }
 }
 

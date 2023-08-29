@@ -20,25 +20,24 @@ namespace practico4
         private void BUT_GENERAR_Click(object sender, EventArgs e)
         {
             LBOX_NUMEROS.Items.Clear();
+            int indice = CLB_PAR_IMPAR_PRIMO.SelectedIndex;
 
             if (!string.IsNullOrWhiteSpace(TXT_DESDE.Text) && !string.IsNullOrWhiteSpace(TXT_HASTA.Text))
             {
-                int desde = int.Parse(TXT_DESDE.Text);
-                int hasta = int.Parse(TXT_HASTA.Text);
-
-                if(desde < hasta)
+                switch (indice)
                 {
-                    for(int i = desde; i <= hasta; i++)
-                    {
-                        LBOX_NUMEROS.Items.Add(i);
-                    }
-                }
-                else
-                {
-                    for(int i = desde; i >= hasta; i--)
-                    {
-                        LBOX_NUMEROS.Items.Add(i);
-                    }
+                    case 0:
+                        this.BUT_PARES_Click();
+                        break;
+                    case 1:
+                        this.BUT_IMPARES_Click();
+                        break;
+                    case 2:
+                        this.BUT_PRIMOS_Click();
+                        break;
+                    default:
+                        MessageBox.Show("Seleccione una opción", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
                 }
             }
             else
@@ -47,6 +46,18 @@ namespace practico4
             }
         }
 
+        private void CLB_PAR_IMPAR_PRIMO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = CLB_PAR_IMPAR_PRIMO.SelectedIndex;
+            int count = CLB_PAR_IMPAR_PRIMO.Items.Count;
+            for (int i = 0; i < count; i++)
+            {
+                if (index != i)
+                {
+                    CLB_PAR_IMPAR_PRIMO.SetItemChecked(i, false);
+                }
+            }
+        }
         private void TXT_DESDE_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -63,7 +74,7 @@ namespace practico4
             }
         }
 
-        private void BUT_PARES_Click(object sender, EventArgs e)
+        private void BUT_PARES_Click()
         {
             LBOX_NUMEROS.Items.Clear();
 
@@ -99,7 +110,7 @@ namespace practico4
             }
         }
 
-        private void BUT_IMPARES_Click(object sender, EventArgs e)
+        private void BUT_IMPARES_Click()
         {
             LBOX_NUMEROS.Items.Clear();
 
@@ -135,7 +146,7 @@ namespace practico4
             }
         }
 
-        private void BUT_PRIMOS_Click(object sender, EventArgs e)
+        private void BUT_PRIMOS_Click()
         {
             LBOX_NUMEROS.Items.Clear();
             int a = 0;
@@ -167,7 +178,18 @@ namespace practico4
                 {
                     for (int i = desde; i >= hasta; i--)
                     {
-                        LBOX_NUMEROS.Items.Add(i);
+                        for (int j = i; j >= 1; j--)
+                        {
+                            if (i % j == 0)
+                            {
+                                a++;
+                            }
+                        }
+                        if (a == 2)
+                        {
+                            LBOX_NUMEROS.Items.Add(i);
+                        }
+                        a = 0;
                     }
                 }
             }
