@@ -149,14 +149,14 @@ namespace practico4
                 {
                     for (int i = desde; i <= hasta; i++)
                     {
-                        for (int j = desde; j <= hasta; j++)
+                        for (int j = i; j >= 1; j--)
                         {
                             if(i % j == 0)
                             {
                                 a++;
                             }
                         }
-                        if(a != 2)
+                        if(a == 2)
                         {
                             LBOX_NUMEROS.Items.Add(i);
                         }
