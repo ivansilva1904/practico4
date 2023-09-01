@@ -39,9 +39,10 @@
             this.LAB_LISTA = new System.Windows.Forms.Label();
             this.LBOX_NUMEROS = new System.Windows.Forms.ListBox();
             this.CLB_PAR_IMPAR_PRIMO = new System.Windows.Forms.CheckedListBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.CH_NUMERITOS = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.BUT_GRAFICAR = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.CH_NUMERITOS)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@
             // 
             this.LAB_LISTA.AutoSize = true;
             this.LAB_LISTA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LAB_LISTA.Location = new System.Drawing.Point(191, 32);
+            this.LAB_LISTA.Location = new System.Drawing.Point(179, 34);
             this.LAB_LISTA.Name = "LAB_LISTA";
             this.LAB_LISTA.Size = new System.Drawing.Size(147, 20);
             this.LAB_LISTA.TabIndex = 6;
@@ -123,26 +124,27 @@
             this.CLB_PAR_IMPAR_PRIMO.TabIndex = 14;
             this.CLB_PAR_IMPAR_PRIMO.SelectedIndexChanged += new System.EventHandler(this.CLB_PAR_IMPAR_PRIMO_SelectedIndexChanged);
             // 
-            // chart1
+            // CH_NUMERITOS
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.CH_NUMERITOS.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(561, 32);
-            this.chart1.Name = "chart1";
+            this.CH_NUMERITOS.Legends.Add(legend1);
+            this.CH_NUMERITOS.Location = new System.Drawing.Point(549, 34);
+            this.CH_NUMERITOS.Name = "CH_NUMERITOS";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(300, 300);
-            this.chart1.TabIndex = 15;
-            this.chart1.Text = "chart1";
+            series1.Name = "serie_numeros";
+            this.CH_NUMERITOS.Series.Add(series1);
+            this.CH_NUMERITOS.Size = new System.Drawing.Size(323, 300);
+            this.CH_NUMERITOS.TabIndex = 15;
+            this.CH_NUMERITOS.Text = "chart1";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BUT_GRAFICAR);
             this.panel1.Controls.Add(this.TXT_DESDE);
             this.panel1.Controls.Add(this.LAB_DESDE);
             this.panel1.Controls.Add(this.LBOX_NUMEROS);
@@ -150,10 +152,20 @@
             this.panel1.Controls.Add(this.LAB_HASTA);
             this.panel1.Controls.Add(this.TXT_HASTA);
             this.panel1.Controls.Add(this.BUT_GENERAR);
-            this.panel1.Location = new System.Drawing.Point(29, 65);
+            this.panel1.Location = new System.Drawing.Point(17, 67);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(517, 235);
             this.panel1.TabIndex = 16;
+            // 
+            // BUT_GRAFICAR
+            // 
+            this.BUT_GRAFICAR.Location = new System.Drawing.Point(24, 191);
+            this.BUT_GRAFICAR.Name = "BUT_GRAFICAR";
+            this.BUT_GRAFICAR.Size = new System.Drawing.Size(100, 23);
+            this.BUT_GRAFICAR.TabIndex = 15;
+            this.BUT_GRAFICAR.Text = "Generar grafico";
+            this.BUT_GRAFICAR.UseVisualStyleBackColor = true;
+            this.BUT_GRAFICAR.Click += new System.EventHandler(this.BUT_GRAFICAR_Click);
             // 
             // Form1
             // 
@@ -161,11 +173,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 361);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.CH_NUMERITOS);
             this.Controls.Add(this.LAB_LISTA);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CH_NUMERITOS)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -183,8 +195,9 @@
         private System.Windows.Forms.Label LAB_LISTA;
         private System.Windows.Forms.ListBox LBOX_NUMEROS;
         private System.Windows.Forms.CheckedListBox CLB_PAR_IMPAR_PRIMO;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart CH_NUMERITOS;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BUT_GRAFICAR;
     }
 }
 

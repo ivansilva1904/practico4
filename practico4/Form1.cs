@@ -198,5 +198,18 @@ namespace practico4
                 MessageBox.Show("Complete los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BUT_GRAFICAR_Click(object sender, EventArgs e)
+        {
+            CH_NUMERITOS.Series["serie_numeros"].Points.Clear();
+            int cantidad = 0;
+            ListBox LBOX_AUX = LBOX_NUMEROS;
+            cantidad = LBOX_AUX.Items.Count;
+
+            for (int i = 0; i < cantidad; i++)
+            {
+                CH_NUMERITOS.Series["serie_numeros"].Points.AddXY(Convert.ToString(i + 1), LBOX_AUX.Items[i].ToString());
+            }
+        }
     }
 }
